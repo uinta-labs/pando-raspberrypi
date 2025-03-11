@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eo pipefail
+set -x
+
+export TEMPLATECONF=../layers/meta-pando-raspberrypi/conf/templates/pando-template
+export MACHINE=${MACHINE:-fincm3}
+source layers/poky/oe-init-build-env
+bitbake pando-image
