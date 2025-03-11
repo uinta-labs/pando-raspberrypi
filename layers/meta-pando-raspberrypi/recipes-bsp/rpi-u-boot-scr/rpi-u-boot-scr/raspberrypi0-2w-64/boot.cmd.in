@@ -1,0 +1,10 @@
+setenv pando_kernel_load_addr ${kernel_addr_r}
+setenv pando_tmp_loadaddr 0x10000000
+run pando_set_kernel_root
+fdt addr ${fdt_addr}
+fdt get value bootargs /chosen bootargs
+env set bootargs "${bootargs} ${pando_kernel_root} rootwait"
+fdt rm /chosen bootargs
+load ${pando_dev_type} ${pando_dev_index}:${pando_root_part} ${pando_tmp_loadaddr} /boot/@@KERNEL_IMAGETYPE@@
+unzip ${fileaddr} ${pando_kernel_load_addr}
+@@KERNEL_BOOTCMD@@ ${pando_kernel_load_addr} - ${fdt_addr}

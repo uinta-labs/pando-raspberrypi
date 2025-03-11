@@ -1,0 +1,19 @@
+[submodule "layers/poky"]
+	path = layers/poky
+	url = https://git.yoctoproject.org/git/poky
+	branch = scarthgap
+[submodule "layers/meta-openembedded"]
+	path = layers/meta-openembedded
+	url = https://github.com/openembedded/meta-openembedded.git
+	branch = scarthgap
+[submodule "layers/meta-pando"]
+	path = layers/meta-pando
+	url = https://github.com/uinta-labs/meta-pando.git
+	branch = main
+[submodule "layers/meta-raspberrypi"]
+	path = layers/meta-raspberrypi
+	url = https://github.com/agherzan/meta-raspberrypi.git
+	branch = scarthgap
+[submodule "layers/meta-rust-bin"]
+	path = layers/meta-rust-bin
+	url = https://github.com/rust-embedded/meta-rust-bin
