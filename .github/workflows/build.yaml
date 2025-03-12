@@ -15,6 +15,12 @@ jobs:
         with:
           submodules: recursive
       
+      - name: Install Required Tools
+        run: |
+          export DEBIAN_FRONTEND=noninteractive
+          sudo apt-get update
+          sudo apt-get install -y chrpath diffstat
+      
       - name: Run Build-A-Pando
         run: |
           MACHINE=raspberrypi3-64 ./bap
