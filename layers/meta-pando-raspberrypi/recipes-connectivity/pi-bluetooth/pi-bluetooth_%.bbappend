@@ -11,9 +11,9 @@ SRC_URI:append = " \
 "
 
 do_install:append () {
-    # Move udev rules into /lib as /etc/udev/rules.d is bind mounted for custom rules
-    install -d ${D}${base_libdir}/udev/rules.d
-    mv ${D}/etc/udev/rules.d/*.rules ${D}${base_libdir}/udev/rules.d/
+    # Move udev rules into /usr/lib as /etc/udev/rules.d is bind mounted for custom rules
+    install -d ${D}${libdir}/udev/rules.d
+    mv ${D}/etc/udev/rules.d/*.rules ${D}${libdir}/udev/rules.d/
 }
 
-FILES:${PN} += "/lib/udev/rules.d"
+FILES:${PN} += "${libdir}/udev/rules.d/*"
